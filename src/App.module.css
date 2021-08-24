@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto:wght@300;400&display=swap");
+
 .App {
   margin: 0;
   padding: 0;
   height: 100vh;
   box-sizing: border-box;
   background-image: url("./assets/img/app-background");
+  font-family: "Roboto", sans-serif;
 }
 
 h1,

@@ -1,5 +1,5 @@
 import classes from "./AvailableBranches.module.css";
 
-const AvailableBranches = () => {};
+const AvailableBranches = () => <div>branches</div>;
 
 export default AvailableBranches;

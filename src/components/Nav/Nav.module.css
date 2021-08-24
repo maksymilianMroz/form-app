@@ -1,0 +1,22 @@
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: space-around;
+}
+
+li {
+  margin: 0 15px 0 15px;
+}
+
+a {
+  color: #54c9ee;
+  text-decoration: none;
+}

@@ -1,0 +1,15 @@
+.Header {
+  min-width: 100%vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0 0 0;
+}
+
+.Logo {
+  font-family: "Rampart One", cursive;
+  font-size: 50px;
+  color: #fff;
+  text-shadow: #54c9ee 1px 0 15px;
+}
