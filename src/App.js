@@ -10,6 +10,7 @@ import classes from "./App.module.css";
 const App = () => {
   return (
     <div className={classes.App}>
+      <h2>testowo</h2>
       <Route path="/home">
         <Home />
       </Route>
