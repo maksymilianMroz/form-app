@@ -6,10 +6,10 @@ const Nav = () => (
   <nav className={classes.Nav}>
     <ul>
       <li>
-        <Link to="/home">Home</Link>
+        <Link to="/home">Strona Główna</Link>
       </li>
       <li>
-        <Link to="/privacy-policy">Privacy Policy</Link>
+        <Link to="/privacy-policy">Polityka Prywatności</Link>
       </li>
     </ul>
   </nav>

@@ -13,14 +13,19 @@ import classes from "./App.module.css";
 
 const App = () => {
   const [selectedBranch, setSelectedBranch] = useState(null);
+  const [formAvalible, setFormAvalible] = useState(false);
+  const [errorVisible, setErrorVisible] = useState(false);
 
   const selectedBranchHandler = (event) => {
-    let select;
-    if (event.target.value === 1) select = "XYZ";
-    if (event.target.value === 2) select = "ABC";
-    if (event.target.value === 3) select = "RNQ";
+    if (event.target.value === 1) setSelectedBranch("XYZ");
+    if (event.target.value === 2) setSelectedBranch("ABC");
+    if (event.target.value === 3) setSelectedBranch("RNQ");
+    setFormAvalible(true);
+    setErrorVisible(false);
+  };
 
-    setSelectedBranch(select);
+  const formAvalibleHandler = () => {
+    !formAvalible && setErrorVisible(true);
   };
 
   return (
@@ -28,6 +33,11 @@ const App = () => {
       value={{
         selectedBranch: selectedBranch,
         selectedBranchHandler: selectedBranchHandler,
+
+        formAvalible: formAvalible,
+        formAvalibleHandler: formAvalibleHandler,
+
+        errorVisible: errorVisible,
       }}
     >
       <div className={classes.App}>

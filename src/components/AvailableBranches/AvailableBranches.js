@@ -6,7 +6,6 @@ import classes from "./AvailableBranches.module.css";
 
 const AvailableBranches = () => {
   const ctx = useContext(AppContext);
-  const ABC = "ABC";
 
   return (
     <div className={classes.Branch}>
@@ -39,7 +38,6 @@ const AvailableBranches = () => {
           RNQ Berlin, Niemcy
         </li>
       </ul>
-      {ctx.selectedBranch}
     </div>
   );
 };
