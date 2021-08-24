@@ -1,0 +1,10 @@
+.container {
+  margin: 100px;
+}
+
+.header {
+  margin: 0 0 20px 0;
+  font-size: 50px;
+  color: #fff;
+  text-shadow: #54c9ee 1px 0 15px;
+}
