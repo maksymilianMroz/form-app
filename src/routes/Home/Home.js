@@ -14,19 +14,22 @@ const Home = () => {
   const ctx = useContext(AppContext);
 
   return (
-    <div className={classes.Home}>
-      <Card>
-        <Text>Wybierz oddział z którym chcesz się skontaktować:</Text>
-      </Card>
-      <AvailableBranches />
-      {ctx.errorVisible && <ErrorComponent />}
-      <Link
-        onClick={!ctx.formAvalible && ctx.formAvalibleHandler}
-        to={ctx.formAvalible && `/form-site`}
-        className={classes.Link}
-      >
-        Przejdź do formularza
-      </Link>
+    <div className={classes.container}>
+      <div className={classes.Home}>
+        <Card>
+          <Text>Wybierz oddział z którym chcesz się skontaktować:</Text>
+        </Card>
+        {ctx.errorVisible && <ErrorComponent />}
+        <AvailableBranches />
+        {ctx.errorVisible && <ErrorComponent />}
+        <Link
+          onClick={!ctx.formAvalible && ctx.formAvalibleHandler}
+          to={ctx.formAvalible && `/form-site`}
+          className={classes.Link}
+        >
+          Przejdź do formularza
+        </Link>
+      </div>
     </div>
   );
 };

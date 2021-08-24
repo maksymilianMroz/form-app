@@ -1,7 +1,14 @@
-.Home {
-  margin-top: 90px;
+.container {
+  width: 100%;
   display: flex;
-  width: 100;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+
+.Home {
+  display: flex;
+  width: fit-content;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -10,6 +17,10 @@
 .Link {
   margin-top: 20px;
   background-color: #fff;
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
