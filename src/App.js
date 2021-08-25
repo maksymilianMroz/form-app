@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, useHistory } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -30,6 +30,10 @@ const App = () => {
 
   // Here we put data from form, after sending it
   const [formDataAfterSend, setFormDataAfterSend] = useState({});
+
+  useEffect(() => {
+    history.push("/form-app/home");
+  }, []);
 
   const selectedBranchHandler = (event) => {
     if (event.target.value === 1) setSelectedBranch("XYZ");
