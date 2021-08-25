@@ -23,7 +23,7 @@ const Home = () => {
         {ctx.errorVisible && <ErrorComponent />}
         <Link
           onClick={!ctx.formAvalible && ctx.isFormAvalibleHandler}
-          to={ctx.formAvalible && `/form-site`}
+          to={ctx.formAvalible && `/form-app/form-site`}
           className={classes.Link}
         >
           Przejdź do formularza

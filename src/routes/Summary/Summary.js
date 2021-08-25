@@ -22,7 +22,7 @@ const Summary = () => {
       <div className={classes.textContainer}>
         <Text>Udało się! Twój formularz został poprawnie wysłany!</Text>
       </div>
-      <Link className={classes.link} to="/home">
+      <Link className={classes.link} to="/form-app/home">
         Wróć do strony głównej
       </Link>
     </div>

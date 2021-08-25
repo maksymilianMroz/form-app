@@ -95,7 +95,7 @@ const App = () => {
       setEnteredText("");
       setFormIsValid(false);
 
-      history.push("/summary");
+      history.push("/form-app/summary");
     }
   };
 
@@ -133,16 +133,16 @@ const App = () => {
     >
       <div className={classes.App}>
         <Header />
-        <Route path="/home">
+        <Route path="/form-app/home">
           <Home />
         </Route>
-        <Route path="/form-site">
+        <Route path="/form-app/form-site">
           <FormSite />
         </Route>
-        <Route path="/privacy-policy">
+        <Route path="/form-app/privacy-policy">
           <PrivacyPolicy />
         </Route>
-        <Route path="/summary">
+        <Route path="/form-app/summary">
           <Summary />
         </Route>
       </div>
