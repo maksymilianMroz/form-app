@@ -19,7 +19,6 @@ const Home = () => {
         <Card>
           <Text>Wybierz oddział z którym chcesz się skontaktować:</Text>
         </Card>
-        {ctx.errorVisible && <ErrorComponent />}
         <AvailableBranches />
         {ctx.errorVisible && <ErrorComponent />}
         <Link

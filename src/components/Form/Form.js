@@ -21,6 +21,7 @@ const Form = () => {
         (result) => {
           setIsLoaded(true);
           setItems(result);
+          ctx.setEnteredText(result[0]);
         },
         (error) => {
           setIsLoaded(true);
@@ -29,16 +30,12 @@ const Form = () => {
       );
   }, []);
 
-  useEffect(() => {
-    ctx.setEnteredText(items[0]);
-  }, [items, setItems, ctx]);
-
   return (
     <>
       <form
         className={classes.form}
         onSubmit={ctx.submitHandler}
-        autocomplete="off"
+        autoComplete="off"
       >
         <div className={classes.inputcontainer}>
           <label className={classes.label} htmlFor="name">
@@ -49,6 +46,7 @@ const Form = () => {
             type="text"
             id="name"
             onChange={ctx.changeNameHandler}
+            autoComplete="off"
           />
         </div>
         <div className={classes.inputcontainer}>
@@ -60,6 +58,7 @@ const Form = () => {
             type="email"
             id="name"
             onChange={ctx.changeEmailHandler}
+            autoComplete="off"
           />
         </div>
         <div className={classes.inputcontainer}>
@@ -76,6 +75,7 @@ const Form = () => {
               id="name"
               value={ctx.enteredText}
               onChange={ctx.changeTextHandler}
+              autoComplete="off"
             />
           )}
         </div>

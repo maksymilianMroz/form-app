@@ -8,3 +8,11 @@
   color: #fff;
   text-shadow: #54c9ee 1px 0 15px;
 }
+
+.textContainer {
+  margin: 20px 0;
+}
+
+.link {
+  text-decoration: underline;
+}

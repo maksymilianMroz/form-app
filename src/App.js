@@ -63,8 +63,8 @@ const App = () => {
     isFormAvalibleHandler();
   };
 
-  const moveToHomePageHandler = () => {
-    history.push("/home");
+  const clearBranchHandler = () => {
+    setSelectedBranch(null);
   };
 
   const formValidationHandler = () => {
@@ -87,16 +87,15 @@ const App = () => {
         "message:": enteredText,
       });
 
-      history.push("/summary");
+      setNameIsValid(false);
+      setEnteredName("");
+      setEmailIsValid(false);
+      setEnteredEmail("");
+      setTextIsValid(false);
+      setEnteredText("");
+      setFormIsValid(false);
 
-      // setSelectedBranch(null);
-      // setNameIsValid(false);
-      // setEnteredName("");
-      // setEmailIsValid(false);
-      // setEnteredEmail("");
-      // setTextIsValid(false);
-      // setEnteredText("");
-      // setFormIsValid(false);
+      history.push("/summary");
     }
   };
 
@@ -129,7 +128,7 @@ const App = () => {
         submitHandler,
         formValidationHandler,
         formErrors,
-        moveToHomePageHandler,
+        clearBranchHandler,
       }}
     >
       <div className={classes.App}>
