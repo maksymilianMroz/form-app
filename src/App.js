@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import AppContext from "./context/app-context";
@@ -12,9 +12,24 @@ import Summary from "./routes/Summary/Summary";
 import classes from "./App.module.css";
 
 const App = () => {
+  const history = useHistory();
+
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [formAvalible, setFormAvalible] = useState(false);
   const [errorVisible, setErrorVisible] = useState(false);
+
+  const [nameIsValid, setNameIsValid] = useState(false);
+  const [enteredName, setEnteredName] = useState("");
+  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [textIsValid, setTextIsValid] = useState(false);
+  const [enteredText, setEnteredText] = useState("");
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  const [formErrors, setFormErrors] = useState(false);
+
+  // Here we put data from form, after sending it
+  const [formDataAfterSend, setFormDataAfterSend] = useState({});
 
   const selectedBranchHandler = (event) => {
     if (event.target.value === 1) setSelectedBranch("XYZ");
@@ -24,20 +39,97 @@ const App = () => {
     setErrorVisible(false);
   };
 
-  const formAvalibleHandler = () => {
+  const isFormAvalibleHandler = () => {
     !formAvalible && setErrorVisible(true);
+  };
+
+  const changeNameHandler = (event) => {
+    setEnteredName(event.target.value);
+    setNameIsValid(enteredName.includes(" "));
+  };
+
+  const changeEmailHandler = (event) => {
+    setEnteredEmail(event.target.value);
+    setEmailIsValid(enteredEmail.includes("@"));
+  };
+
+  const changeTextHandler = (event) => {
+    setEnteredText(event.target.value);
+    setTextIsValid(enteredText.trim().length < 5000);
+  };
+
+  const isSelectedBranchHandler = () => {
+    history.push("/home");
+    isFormAvalibleHandler();
+  };
+
+  const moveToHomePageHandler = () => {
+    history.push("/home");
+  };
+
+  const formValidationHandler = () => {
+    if (nameIsValid && emailIsValid && textIsValid) setFormIsValid(true);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    formValidationHandler();
+
+    if (!formIsValid) {
+      setFormErrors(true);
+    }
+
+    if (formIsValid) {
+      setFormErrors(false);
+      setFormDataAfterSend({
+        "name:": enteredName,
+        "email:": enteredEmail,
+        "message:": enteredText,
+      });
+
+      history.push("/summary");
+
+      // setSelectedBranch(null);
+      // setNameIsValid(false);
+      // setEnteredName("");
+      // setEmailIsValid(false);
+      // setEnteredEmail("");
+      // setTextIsValid(false);
+      // setEnteredText("");
+      // setFormIsValid(false);
+    }
   };
 
   return (
     <AppContext.Provider
       value={{
-        selectedBranch: selectedBranch,
-        selectedBranchHandler: selectedBranchHandler,
+        selectedBranch,
+        selectedBranchHandler,
 
-        formAvalible: formAvalible,
-        formAvalibleHandler: formAvalibleHandler,
+        formAvalible,
+        isFormAvalibleHandler,
 
-        errorVisible: errorVisible,
+        errorVisible,
+
+        enteredName,
+        enteredEmail,
+        enteredText,
+        setEnteredText,
+
+        nameIsValid,
+        emailIsValid,
+        textIsValid,
+        formIsValid,
+
+        changeNameHandler,
+        changeEmailHandler,
+        changeTextHandler,
+        isSelectedBranchHandler,
+
+        submitHandler,
+        formValidationHandler,
+        formErrors,
+        moveToHomePageHandler,
       }}
     >
       <div className={classes.App}>

@@ -23,7 +23,7 @@ const Home = () => {
         <AvailableBranches />
         {ctx.errorVisible && <ErrorComponent />}
         <Link
-          onClick={!ctx.formAvalible && ctx.formAvalibleHandler}
+          onClick={!ctx.formAvalible && ctx.isFormAvalibleHandler}
           to={ctx.formAvalible && `/form-site`}
           className={classes.Link}
         >

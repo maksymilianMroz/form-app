@@ -31,3 +31,8 @@
 .button {
   font-size: 30px;
 }
+
+.errors h2 {
+  color: #fff;
+  text-shadow: #ff0808 1px 0 15px;
+}
