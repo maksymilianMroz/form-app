@@ -16,9 +16,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-You can also visit the demo page of this App, at:
+### `You can also visit the demo page of this App, at:`
 
-### `https://maksymilianmroz.github.io/form-app`
+https://maksymilianmroz.github.io/form-app
 
 ## More about app
 
