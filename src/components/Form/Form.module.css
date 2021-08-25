@@ -20,10 +20,14 @@
 
 .text {
   border: 1px solid #54c9ee;
-  padding: 10px 0;
+  padding: 10px 8px;
   box-shadow: #54c9ee 1px 0 15px;
 }
 
 .textarea {
   height: 150px;
+}
+
+.button {
+  font-size: 30px;
 }
