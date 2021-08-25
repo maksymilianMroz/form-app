@@ -18,7 +18,7 @@ You will also see any lint errors in the console.
 
 You can also visit the demo page of this App, at:
 
-### `adress`
+### `https://maksymilianmroz.github.io/form-app/home`
 
 ## More about app
 
